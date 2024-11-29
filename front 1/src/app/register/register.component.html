@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="register.component.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Registrarse</h2>
+        <form [formGroup]="register" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Nombre de usuario" required formControlName="nombre">
+        <input type="password" placeholder="Contraseña" required formControlName="contraseña">
+        <input type="password" placeholder="Confirmar contraseña" required formControlName="contraseña_confirmada">
+        <button type="submit">Registrarse</button>
+        <a href="login">Inicio de Sesión</a>
+        <!--<button routerLink="/login">Ingresar al sistema</button>--><!--este es el botón con el link-->
+        <!--<button type="button" (click)="irALogin()">Ingresar al sistema</button>--> <!-- Botón que navega a Login -->
+        <!-- <a routerLink="/login">Ir al Login</a>--> <!--este es el link-->
+        </form>
+    </div>
+<!-- npm @install angular-->
+</body>
+<!--hacer una página diferente para ingresar al login*/ver typescript y java-->
+</html>
+

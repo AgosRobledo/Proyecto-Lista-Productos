@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div>
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+            </div>
+            <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+            
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        </div>
+<!-- npm @install angular-->
+</body>
+<!--hacer una página diferente para ingresar al login*/ver typescript y java-->
+</html>

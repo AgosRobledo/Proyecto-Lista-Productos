@@ -1,0 +1,124 @@
+<!-- home.component.html -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Easy Cooking</a>
+    <div class="ml-auto">
+        <button mat-raised-button color="primary">
+            Agregar Receta
+        </button>
+
+    </div>
+</nav>
+<!-- (click)="navigateToHome() -->
+
+
+<h1>Bienvenido a Mi Recetario</h1>
+
+
+
+<!-- Lista de Recetas -->
+<div class="recipe-list">
+    <div class="recipe-card" *ngFor="let receta of recetas">
+
+        <img [src]="receta.imagen" alt="{{ receta.titulo }}" />
+        <h3>{{ receta.titulo }}</h3>
+        <p>{{ receta.descripcion }}</p>
+        <button (click)="verDetalles(receta)">Ver más</button>
+    </div>
+</div>
+
+<!-- Detalles de la Receta Seleccionada -->
+<div *ngIf="recetaSeleccionada" class="detalle-receta">
+    <h2>{{ recetaSeleccionada.titulo }}</h2>
+    <h4>Ingredientes:</h4>
+    <ul>
+        <li *ngFor="let ingrediente of recetaSeleccionada.ingredientes">{{ ingrediente }}</li>
+    </ul>
+    <h4>Preparación:</h4>
+    <p>{{ recetaSeleccionada.preparacion }}</p>
+    <button (click)="cerrarDetalles()">Cerrar</button>
+</div>
+<div class="modal" *ngIf="recetaSeleccionada">
+    <div class="modal-content">
+        <span class="close" (click)="cerrarDetalles()">&times;</span>
+        <img [src]="recetaSeleccionada.imagen" alt="{{ recetaSeleccionada.titulo }}" class="modal-img" />
+        <h2>{{ recetaSeleccionada.titulo }}</h2>
+
+        <h4>Ingredientes:</h4>
+        <ul>
+            <li *ngFor="let ingrediente of recetaSeleccionada.ingredientes">{{ ingrediente }}</li>
+        </ul>
+
+        <h4>Preparación:</h4>
+        <ol>
+            <li *ngFor="let paso of recetaSeleccionada.preparacion">{{ paso }}</li>
+        </ol>
+    </div>
+</div>
+
+
+
+<!-- Si ya configuraste las rutas, el enlace debe usar routerLink en lugar de href -->
+<!-- <a routerLink="/login">LOLALOLITA</a> -->
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Easy Cooking</a>
+    <div class="ml-auto">
+        <button style="border: none; background: none; padding: 0;">
+            <img src="assets/estrella.png" alt="estrella" style="width: 20px; height: 20px;">
+        </button>
+    </div>
+</nav> -->
+<!-- (click)="navigateToHome() -->
+
+<!-- 
+<h1>Bienvenido a Mi Recetario</h1> -->
+
+<!-- Lista de Recetas -->
+<!-- <div class="recipe-list">
+    <div class="recipe-card" *ngFor="let receta of recetas">
+        <button style="position: absolute; z-index: 1000;">
+            <img src="assets/estrella.png" alt="estrella" style="width: 20px; height: 20px;">
+        </button>
+        <img [src]="receta.imagen" alt="{{ receta.titulo }}" />
+        <h3>{{ receta.titulo }}</h3>
+        <p>{{ receta.descripcion }}</p>
+        <button (click)="verDetalles(receta)">Ver más</button>
+    </div>
+</div> -->
+<!-- Detalles de la Receta Seleccionada -->
+<!-- <div *ngIf="recetaSeleccionada" class="detalle-receta">
+    <h2>{{ recetaSeleccionada.titulo }}</h2>
+    <h4>Ingredientes:</h4>
+    <ul>
+        <li *ngFor="let ingrediente of recetaSeleccionada.ingredientes">{{ ingrediente }}</li>
+    </ul>
+    <h4>Preparación:</h4>
+    <p>{{ recetaSeleccionada.preparacion }}</p>
+    <button (click)="cerrarDetalles()">Cerrar</button>
+</div>
+<div class="modal" *ngIf="recetaSeleccionada">
+    <div class="modal-content">
+        <span class="close" (click)="cerrarDetalles()">&times;</span>
+        <img [src]="recetaSeleccionada.imagen" alt="{{ recetaSeleccionada.titulo }}" class="modal-img" />
+        <h2>{{ recetaSeleccionada.titulo }}</h2>
+
+        <h4>Ingredientes:</h4>
+        <ul>
+            <li *ngFor="let ingrediente of recetaSeleccionada.ingredientes">{{ ingrediente }}</li>
+        </ul>
+
+        <h4>Preparación:</h4>
+        <ol>
+            <li *ngFor="let paso of recetaSeleccionada.preparacion">{{ paso }}</li>
+        </ol>
+    </div>
+</div> -->

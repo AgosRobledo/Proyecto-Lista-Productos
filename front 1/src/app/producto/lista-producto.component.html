@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+    
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/producto"><i class="far fa-list-alt"></i> Lista</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+        </li>
+        
+    </ul>
+    </div>
+</nav>
+
+
+
+<div class="container" *ngIf="!listavacia">
+    <table class="table table-dark text-center">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Ver</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Borrar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}€</td>
+            <td><button class="btn btn-outline-primary" (click)="verDetalle(producto.id)"><i class="far fa-eye"></i> Ver
+                </button></td>
+            
+            <td><button class="btn btn-outline-warning" (click)="editarProducto(producto.id)"><i class="far fa-edit"></i> Editar
+                </button>
+            </td>            
+            <td><button class="btn btn-outline-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> Eliminar
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> 
+
+<div class="container" *ngIf="listavacia">
+    <div class="text-black-50 bg-white text-center"><h2> {{listavacia}} </h2></div>
+</div>
